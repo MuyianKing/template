@@ -50,6 +50,9 @@
       ],
       "@layout/*": [
         "./src/layout/*"
+      ],
+      "@app": [
+        "./src/utils/app"
       ]
     }
   },

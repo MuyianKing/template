@@ -1,4 +1,4 @@
-import path from 'node:path'
+import HlUIResolver from '@hl/ui/resolver'
 import { defineConfig, loadEnv } from '@rsbuild/core'
 import { pluginImageCompress } from '@rsbuild/plugin-image-compress'
 import { pluginSass } from '@rsbuild/plugin-sass'
@@ -31,19 +31,7 @@ export default defineConfig({
             ElementPlusResolver({
               importStyle: 'sass',
             }),
-            {
-              type: 'component',
-              resolve: (name) => {
-                if (name.startsWith('Hl')) {
-                  return {
-                    name,
-                    importName: name,
-                    from: '@hl/ui',
-                    path: `@hl/ui/index.js`,
-                  }
-                }
-              },
-            },
+            HlUIResolver(),
           ],
         }),
         AutoImport({
@@ -61,13 +49,6 @@ export default defineConfig({
   source: {
     alias: alias_map,
     define: publicVars,
-    include: [
-      path.resolve(__dirname, '../packages/task/src'),
-      /[\\/]node_modules[\\/]/,
-    ],
-    exclude: [
-      /node_modules[\\/]element-plus[\\/]/,
-    ],
   },
   output: {
     polyfill: 'entry',

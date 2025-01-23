@@ -1,7 +1,12 @@
-<script name="UserLoginNoAlive" setup>
+<script setup>
+import { WEB_NAME } from '@app'
 import { useRequest } from '@hl/hooks'
+import { login } from '@hl/tyyh'
 import { clearUserData } from '@server/user'
-import { login } from "@hl/tyyh"
+
+defineOptions({
+  name: 'UserLoginNoAlive',
+})
 
 const form = reactive({
   username: '',
@@ -10,18 +15,6 @@ const form = reactive({
 })
 
 const login_ref = ref(null)
-const rules = {
-  username: [{
-    required: true,
-    message: '请输入用户名',
-    trigger: 'blur',
-  }],
-  password: [{
-    required: true,
-    message: '请输入密码',
-    trigger: 'blur',
-  }],
-}
 
 const { loading, request } = useRequest(login)
 
@@ -42,18 +35,10 @@ const userStore = useUserStore()
 const router = useRouter()
 
 // 登录成功
-function afterLogin(data) {
-  data = {
-    ...data.data,
-    token: data.token,
-  }
+function afterLogin({ data }) {
   userStore.initUser(data)
   router.push('/')
 }
-
-onMounted(() => {
-  clearUserData(router)
-})
 
 const route = useRoute()
 // 监听是否是认证失败跳过来的
@@ -70,6 +55,10 @@ watch(() => route.query, (query) => {
 }, {
   immediate: true,
 })
+
+onMounted(() => {
+  clearUserData(router)
+})
 </script>
 
 <template>
@@ -82,24 +71,24 @@ watch(() => route.query, (query) => {
         <div class="right">
           <div class="login-container">
             <div class="w-full text-center text-4xl mb-8">
-              赋能中心
+              {{ WEB_NAME }}
             </div>
             <div class="login-form">
-              <el-form ref="login_ref" :model="form" :rules="rules" label-position="top" size="large">
-                <el-form-item label="账号" prop="username">
+              <el-form ref="login_ref" :model="form" label-position="top" size="large">
+                <hl-form-item label="账号" prop="username" required>
                   <el-input v-model="form.username" placeholder="请输入账号">
                     <template #prefix>
                       <hl-icon icon="iconoir:user" size="26" color="#409eff" />
                     </template>
                   </el-input>
-                </el-form-item>
-                <el-form-item label="密码" prop="password">
+                </hl-form-item>
+                <hl-form-item label="密码" prop="password" required>
                   <el-input v-model="form.password" placeholder="请输入密码" show-password type="password" @keyup.enter="submitForm">
                     <template #prefix>
                       <hl-icon icon="fluent-emoji-high-contrast:locked" size="23" color="#409eff" />
                     </template>
                   </el-input>
-                </el-form-item>
+                </hl-form-item>
               </el-form>
               <el-button class="login-btn py-0" @click="submitForm">
                 登录
@@ -204,7 +193,7 @@ $url: '@img/login/';
     max-width: 600px !important;
     height: 500px !important;
 
-    &>img {
+    & > img {
       height: 100%;
       width: 100%;
     }
