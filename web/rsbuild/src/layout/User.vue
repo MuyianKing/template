@@ -1,6 +1,5 @@
 <script setup>
 import { logout } from '@server/user'
-import { PersonAvatar } from '@tyyh'
 
 // 用户名下拉菜单选择事件
 const router = useRouter()
@@ -22,7 +21,6 @@ function handleDown(command) {
 <template>
   <el-dropdown class="user-name" trigger="click" @command="handleDown">
     <div class="el-dropdown-link inline-flex items-center cursor-pointer">
-      <person-avatar />
       <div class="ml-2">
         <span>{{ user.name }}</span>
         <div v-if="organization.organization_id" class="org-box">

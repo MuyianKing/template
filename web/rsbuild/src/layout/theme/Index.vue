@@ -1,4 +1,4 @@
-<script setup name="HlTheme">
+<script setup>
 import ConfigItem from '@layout/theme/ConfigItem.vue'
 import variables from '@style/theme.module.scss'
 import { colors_config, innerTheme, side_bg_config, tab_bar_config } from './inner.theme'
@@ -66,7 +66,7 @@ onMounted(() => {
 
 <template>
   <div class="theme-wrapper">
-    <hl-icon icon="icon-park-outline:platte" @click="showConfig" />
+    <mu-icon icon="icon-park-outline:platte" @click="showConfig" />
 
     <el-drawer v-model="show_config" title="设置主题" size="440px">
       <template #default>

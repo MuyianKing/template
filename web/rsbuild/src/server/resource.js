@@ -1,12 +1,10 @@
-import { getResourcesByLabel } from '@hl/tyyh'
-
 /**
- * @param {string} label
+ * 获取菜单
  */
-export async function getRouters(label) {
+export async function getRouters() {
   if (!useUserStore().token) {
     return []
   }
 
-  return getResourcesByLabel(label)
+  return []
 }

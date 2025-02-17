@@ -1,8 +1,8 @@
 <script setup>
-import { storage } from '@hl/utils'
 import ExitFull from '@layout/ExitFull.vue'
-import HlHeader from '@layout/Header.vue'
-import HlSidebar from '@layout/side-bar/Index.vue'
+import HeaderComp from '@layout/Header.vue'
+import Sidebar from '@layout/side-bar/Index.vue'
+import { storage } from '@muyianking/utils'
 import useIframeStore from '@pinia/useIframeStore'
 
 const appStore = useAppStore()
@@ -99,9 +99,9 @@ const no_parent = ref(window.top === window.self)
 <template>
   <div v-if="show" class="main-body-wrapper">
     <exit-full v-if="appStore.full_page && no_parent" />
-    <hl-sidebar v-if="no_parent" v-model="collapse" :class="{ 'hidden-hidden': appStore.full_page }" class="relative z-10" />
+    <sidebar v-if="no_parent" v-model="collapse" :class="{ 'hidden-hidden': appStore.full_page }" class="relative z-10" />
     <div class="bottom-wrapper">
-      <hl-header v-if="no_parent" v-model:collapse="collapse" :class="{ 'hidden-hidden': appStore.full_page }" />
+      <header-comp v-if="no_parent" v-model:collapse="collapse" :class="{ 'hidden-hidden': appStore.full_page }" />
       <div v-show="!_route.path.startsWith('/iframe')" :class="{ 'content-collapse': collapse }" class="content-box">
         <router-view v-slot="{ Component, route }">
           <transition mode="out-in" name="fade">
@@ -112,11 +112,6 @@ const no_parent = ref(window.top === window.self)
         </router-view>
       </div>
       <iframe v-for="item in iframe_url_list" v-show="item.key === _route.path.split('__')[1]" :key="item.key" class="content-box iframe-body" :src="item.url" />
-      <div class="w-full pb-2 text-xs text-[#333] text-center" style="background-color: var(--bg-color)">
-        技术支持：常州华龙通信科技股份有限公司
-        <span class="px-2">|</span>
-        建议使用谷歌 60 以上版本的浏览器
-      </div>
     </div>
   </div>
 </template>

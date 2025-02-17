@@ -17,9 +17,6 @@ export const BASE_URL = import.meta.env.VITE_BASE_URL
 const icon_url = import.meta.env.VITE_ICONIFY_API
 export const ICONIFY_API = icon_url.startsWith('http') ? icon_url : (BASE_URL + icon_url)
 
-// 资源标识
-export const RESOURCE_ID = import.meta.env.VITE_RESOPURCE_ID
-
 // 其他环境变量
 export const ENV_CONFIG = {
   title: import.meta.env.VITE_WEB_NAME,

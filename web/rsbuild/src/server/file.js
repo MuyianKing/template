@@ -51,7 +51,7 @@ function upload(data, params = {}) {
     config.onUploadProgress = params.onProgress
   }
 
-  return http.instance.post(params.url || hl.api.upload, data, config)
+  return http.instance.post(params.url, data, config)
 }
 
 /**

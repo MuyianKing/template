@@ -1,19 +1,17 @@
 import { ENV_MODE } from '@app'
-import { logout as logoutServer } from '@hl/tyyh'
 
 /**
  * 退出登录
  */
 export async function logout(router) {
   try {
-    await logoutServer()
     clearUserData(router)
   } catch (error) {
     console.log(error)
   } finally {
     let url = `${window.location.origin}${window.location.pathname}#/login`
     if (ENV_MODE === 'dev') {
-      url += '?hl=!@#'
+      url += '?test=!@#'
     }
 
     window.location.href = url

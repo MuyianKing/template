@@ -76,7 +76,7 @@ onMounted(() => {
             {{ WEB_NAME }}
           </el-link>
         </div>
-        <hl-icon :icon="collapse ? 'fa:indent' : 'fa:dedent'" class="collapse-btn" @click="collapse = !collapse" />
+        <mu-icon :icon="collapse ? 'fa:indent' : 'fa:dedent'" class="collapse-btn" @click="collapse = !collapse" />
       </div>
       <template v-for="item in sideMenu" :key="item.path">
         <sub-menu :menu="item" />

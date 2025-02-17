@@ -1,5 +1,5 @@
 import { BASE_URL } from '@app'
-import { download, getBlobFromUrl } from '@hl/utils'
+import { download, getBlobFromUrl, isTruth } from '@muyianking/utils'
 
 /**
  * 获取文件预览地址
@@ -8,7 +8,7 @@ import { download, getBlobFromUrl } from '@hl/utils'
  * @returns {string} url
  */
 export function previewFileUrl(path, prefix = '') {
-  if (!hl.common.isTruth(path)) {
+  if (!isTruth(path)) {
     return ''
   }
 

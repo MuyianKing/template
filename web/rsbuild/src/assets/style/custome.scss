@@ -20,13 +20,13 @@
 }
 
 // 表格
-.hl-table-header {
+.mu-table-header {
   border-color: var(--color-primary) !important;
 
-  .hl-table-tr {
+  .mu-table-tr {
     background-color: var(--color-primary);
 
-    .hl-table-th {
+    .mu-table-th {
       color: white;
 
       .el-dropdown { // 表头下拉筛选自定义样式
@@ -49,8 +49,8 @@
 }
 
 
-.hl-table-body {
-  .hl-table-td {
+.mu-table-body {
+  .mu-table-td {
     color: #666;
   }
 }
@@ -95,7 +95,7 @@ a:focus {
   color: inherit;
 }
 
-.hl-button.el-button {
+.mu-button.el-button {
   padding: 0 15px;
 }
 

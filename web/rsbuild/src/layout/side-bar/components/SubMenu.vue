@@ -40,13 +40,13 @@ function appendToken(path) {
   <template v-if="!menu.meta?.hide">
     <el-sub-menu v-if="menu.children && menu.children.length > 0" :key="menu.path" :index="pathResolve(menu)">
       <template #title>
-        <hl-icon v-if="menu.meta?.icon" :icon="menu.meta.icon" class="top-item-icon" />
+        <mu-icon v-if="menu.meta?.icon" :icon="menu.meta.icon" class="top-item-icon" />
         <span class="item-title">{{ menu.meta?.title }}</span>
       </template>
       <sub-menu v-for="item in menu.children" :key="item.path" :menu="item" />
     </el-sub-menu>
     <el-menu-item v-else :index="pathResolve(menu, true)">
-      <hl-icon v-if="menu.meta?.icon" :icon="menu.meta.icon" class="top-item-icon" />
+      <mu-icon v-if="menu.meta?.icon" :icon="menu.meta.icon" class="top-item-icon" />
       <template #title>
         <a v-if="menu.is_frame === 2" :href="pathResolve(menu)" target="_blank" class="item-title a-item" @click.stop>
           {{ menu.meta?.title }}

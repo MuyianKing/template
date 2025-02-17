@@ -9,7 +9,7 @@ function handleClose() {
 <template>
   <div class="close-wrapper">
     <div class="close-item">
-      <hl-icon icon="iconamoon:close-thin" size="28px" @click="handleClose" />
+      <mu-icon icon="iconamoon:close-thin" size="28px" @click="handleClose" />
     </div>
   </div>
 </template>

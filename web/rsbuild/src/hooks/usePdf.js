@@ -1,4 +1,4 @@
-import { translateUnit } from '@hl/utils'
+import { loading as startLoading, translateUnit } from '@muyianking/utils'
 import domtoimage from 'dom-to-image-more'
 import { jsPDF as JsPDF } from 'jspdf'
 
@@ -75,13 +75,15 @@ export default function usePdf(selector, complete) {
       loading.close()
     }
   }
+
   async function exportPdf(fileName) {
     isExport.value = true
-    loading = hl.message.loading('正在导出PDF，请稍后...')
+    loading = startLoading('正在导出PDF，请稍后...')
     setTimeout(() => {
       downloadPdf(fileName)
     }, 1500)
   }
+
   return {
     isExport,
     exportPdf,

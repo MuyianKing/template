@@ -1,6 +1,6 @@
 <script setup>
 const tags = useTagsStore()
-const appStore = useAppStore()
+// const appStore = useAppStore()
 
 const route = useRoute()
 const router = useRouter()
@@ -27,19 +27,19 @@ function closeTags(index) {
   }
 }
 
-// 关闭全部标签
-function closeAll() {
-  tags.clearTags()
-  router.push('/')
-}
+// // 关闭全部标签
+// function closeAll() {
+//   tags.clearTags()
+//   router.push('/')
+// }
 
-// 关闭其他标签
-function closeOther() {
-  const curItem = tagsList.value.filter(item => item.path === route.fullPath)
-  tags.closeTagsOther(curItem)
-}
+// // 关闭其他标签
+// function closeOther() {
+//   const curItem = tagsList.value.filter(item => item.path === route.fullPath)
+//   tags.closeTagsOther(curItem)
+// }
 
-const context_menu_ref = ref()
+// const context_menu_ref = ref()
 
 const options = ref([])
 
@@ -69,39 +69,28 @@ function toggle(data) {
     })
   }
 
-  context_menu_ref.value.toggle(data)
+  // context_menu_ref.value.toggle(data)
 }
 
-function handleRefresh() {
-  router.replace(route.path)
-  tags.reload = false
-  nextTick(() => {
-    tags.reload = true
-  })
-}
-
-function handleClick({ data, option }) {
-  switch (option.value) {
-    case 'close':
-      closeTags(data.index)
-      break
-    case 'other':
-      closeOther()
-      break
-    case 'all':
-      closeAll()
-      break
-    case 'full':
-      router.push(data.path)
-      appStore.full_page = true
-      break
-    case 'refresh':
-      handleRefresh()
-      break
-    default:
-      break
-  }
-}
+// function handleClick({ data, option }) {
+//   switch (option.value) {
+//     case 'close':
+//       closeTags(data.index)
+//       break
+//     case 'other':
+//       closeOther()
+//       break
+//     case 'all':
+//       closeAll()
+//       break
+//     case 'full':
+//       router.push(data.path)
+//       appStore.full_page = true
+//       break
+//     default:
+//       break
+//   }
+// }
 
 function iconCloseTags(item) {
   closeTags(tagsList.value.findIndex(i => i.path === item.path))
@@ -116,11 +105,11 @@ function iconCloseTags(item) {
                      class="tags-li" @contextmenu.prevent="toggle({ index, path: item.path })"
         >
           <span class="tags-li-title">{{ item.title }}</span>
-          <hl-icon v-if="tagsList.length > 1" class="tags-close-box" icon="typcn:delete-outline" @click.stop.prevent="iconCloseTags(item)" />
+          <mu-icon v-if="tagsList.length > 1" class="tags-close-box" icon="typcn:delete-outline" @click.stop.prevent="iconCloseTags(item)" />
         </router-link>
       </div>
     </el-scrollbar>
-    <hl-context-menu ref="context_menu_ref" :options="options" class="context-menu-box" @click="handleClick" />
+    <!-- <hl-context-menu ref="context_menu_ref" :options="options" class="context-menu-box" @click="handleClick" /> -->
   </div>
 </template>
 
@@ -203,12 +192,11 @@ function iconCloseTags(item) {
   height: auto !important;
   top: 45px !important;
   line-height: 32px;
-  //padding: 10px;
   :deep(.arrow) {
     top: 0;
   }
 
-  :deep(.hl-context-menu-item) {
+  :deep(.mu-context-menu-item) {
     display: flex;
     align-items: center;
     cursor: pointer;

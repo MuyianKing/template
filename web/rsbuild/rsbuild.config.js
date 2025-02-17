@@ -1,4 +1,4 @@
-import HlUIResolver from '@hl/ui/resolver'
+import { MuUiResolver } from '@muyianking/ui/resolver'
 import { defineConfig, loadEnv } from '@rsbuild/core'
 import { pluginImageCompress } from '@rsbuild/plugin-image-compress'
 import { pluginSass } from '@rsbuild/plugin-sass'
@@ -31,7 +31,7 @@ export default defineConfig({
             ElementPlusResolver({
               importStyle: 'sass',
             }),
-            HlUIResolver(),
+            MuUiResolver(),
           ],
         }),
         AutoImport({
@@ -57,14 +57,6 @@ export default defineConfig({
       js: false,
     },
   },
-  performance: {
-    chunkSplit: {
-      strategy: 'split-by-module',
-      override: {
-        chunks: 'all',
-        minSize: 8 * 1000 * 5,
-      },
-    },
-  },
+  performance: {},
   dev: {},
 })

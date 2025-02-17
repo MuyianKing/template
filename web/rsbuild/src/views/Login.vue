@@ -1,7 +1,5 @@
 <script setup>
 import { WEB_NAME } from '@app'
-import { useRequest } from '@hl/hooks'
-import { login } from '@hl/tyyh'
 import { clearUserData } from '@server/user'
 
 defineOptions({
@@ -16,17 +14,11 @@ const form = reactive({
 
 const login_ref = ref(null)
 
-const { loading, request } = useRequest(login)
-
 // 登录
 function submitForm() {
   login_ref.value.validate(async (valid) => {
     if (valid) {
-      request(form).then((res) => {
-        afterLogin(res)
-      }).catch((err) => {
-        hl.message.error(err, '登录失败')
-      })
+      afterLogin()
     }
   })
 }
@@ -44,13 +36,7 @@ const route = useRoute()
 // 监听是否是认证失败跳过来的
 watch(() => route.query, (query) => {
   if (query.msg) {
-    setTimeout(() => {
-      hl.message.confirm(query.msg, '', {
-        showCancelButton: false,
-      }).then(() => {
-        window.location.href = `${window.location.origin}#/login`
-      })
-    }, 100)
+    console.log('query.msg', query.msg)
   }
 }, {
   immediate: true,
@@ -62,7 +48,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-loading="loading" class="login-wrapper text-center">
+  <div class="login-wrapper text-center">
     <div class="login-box-wrapper text-[0px]">
       <div class="main-part">
         <div class="left">
@@ -75,20 +61,20 @@ onMounted(() => {
             </div>
             <div class="login-form">
               <el-form ref="login_ref" :model="form" label-position="top" size="large">
-                <hl-form-item label="账号" prop="username" required>
+                <el-form-item label="账号" prop="username" required>
                   <el-input v-model="form.username" placeholder="请输入账号">
                     <template #prefix>
-                      <hl-icon icon="iconoir:user" size="26" color="#409eff" />
+                      <mu-icon icon="iconoir:user" size="26" color="#409eff" />
                     </template>
                   </el-input>
-                </hl-form-item>
-                <hl-form-item label="密码" prop="password" required>
+                </el-form-item>
+                <el-form-item label="密码" prop="password" required>
                   <el-input v-model="form.password" placeholder="请输入密码" show-password type="password" @keyup.enter="submitForm">
                     <template #prefix>
-                      <hl-icon icon="fluent-emoji-high-contrast:locked" size="23" color="#409eff" />
+                      <mu-icon icon="fluent-emoji-high-contrast:locked" size="23" color="#409eff" />
                     </template>
                   </el-input>
-                </hl-form-item>
+                </el-form-item>
               </el-form>
               <el-button class="login-btn py-0" @click="submitForm">
                 登录

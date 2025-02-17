@@ -29,7 +29,7 @@ function handleChange(key, val) {
 // 重置
 function handelReset() {
   props.configList.forEach((item) => {
-    themeStore.theme[item.key] = hl.variables[item.key]
+    themeStore.theme[item.key] = window.THEME_VARIABLES[item.key]
   })
 }
 </script>
@@ -38,7 +38,7 @@ function handelReset() {
   <div class="card-wrapper self-options">
     <div class="card-title">
       <span>{{ title }}</span>
-      <hl-icon v-if="reset" icon="ion:refresh-outline" class="cursor-pointer" title="重置" style="font-size: 20px;" @click="handelReset" />
+      <mu-icon v-if="reset" icon="ion:refresh-outline" class="cursor-pointer" title="重置" style="font-size: 20px;" @click="handelReset" />
     </div>
     <div class="flex flex-wrap pl-2 justify-between">
       <div v-for="config in configList" :key="config.key" class="inline-config">

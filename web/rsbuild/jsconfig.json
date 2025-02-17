@@ -39,9 +39,6 @@
       "@style/*": [
         "./src/assets/style/*"
       ],
-      "@hl/utils": [
-        "./node_modules/@hl/utils/*"
-      ],
       "@http/*": [
         "./src/utils/request"
       ],

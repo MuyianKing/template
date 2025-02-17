@@ -9,9 +9,9 @@ export default antfu({
   ignores: ['**/public/**'],
 }, {
   rules: eslint,
+  files: ['**/src/**'],
   languageOptions: {
     globals: {
-      hl: true,
       dayjs: true,
     },
   },

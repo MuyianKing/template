@@ -1,7 +1,8 @@
 <script setup>
-import { exitFullScreen, openFullScreen } from '@hl/utils'
-import HlTags from '@layout/Tags.vue'
-import HlTheme from '@layout/theme/Index.vue'
+import TagsLayout from '@layout/Tags.vue'
+import ThemeLayout from '@layout/theme/Index.vue'
+import { exitFullScreen, openFullScreen } from '@muyianking/utils'
+
 import UserInfo from './User.vue'
 
 const isfull = ref(false)
@@ -19,11 +20,11 @@ function fullScreen() {
 <template>
   <div class="outer-header">
     <div class="header">
-      <hl-tags class="tags-wrapper" />
+      <tags-layout class="tags-wrapper" />
       <div class="header-right">
         <div class="header-user-con">
-          <hl-theme class="cursor-pointer" />
-          <hl-icon class="cursor-pointer" icon="icon-park-outline:full-screen" @click="fullScreen" />
+          <theme-layout class="cursor-pointer" />
+          <mu-icon class="cursor-pointer" icon="icon-park-outline:full-screen" @click="fullScreen" />
           <user-info />
         </div>
       </div>

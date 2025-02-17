@@ -14,7 +14,6 @@ const alias_path = [
   ['@style', './src/assets/style'],
   ['@layout', './src/layout'],
   ['@directions', './src/directions'],
-  ['@tyyh', '@hl/tyyh'],
   ['@app', './src/utils/app'],
   ['@http', './src/utils/request'],
   ['@utils', './src/utils'],

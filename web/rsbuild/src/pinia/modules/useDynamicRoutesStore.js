@@ -1,5 +1,6 @@
 import pages from '@/pages'
-import { RESOURCE_ID } from '@app'
+import statisticRouter from '@/router/menu/statistic.router'
+import { firstUpcase } from '@muyianking/utils'
 import { getRouters } from '@server/resource'
 import { cloneDeep } from 'lodash-es'
 import { defineStore } from 'pinia'
@@ -15,7 +16,10 @@ export default defineStore('dynamicRouter', {
     // 初始化动态路由
     async initDynamicRoutes(router) {
       try {
-        this.list = await getRouters(RESOURCE_ID)
+        this.list = [
+          ...statisticRouter,
+          ...await getRouters(),
+        ]
 
         addRoutes(router, filterAsyncRouter(cloneDeep(this.list)))
       } catch (e) {
@@ -71,7 +75,7 @@ function filterAsyncRouter(asyncRouterMap, type = false) {
       route.path = route.path.startsWith('/') ? route.path : `/${route.path}`
     }
     if (route.component) {
-      route.name = route.path.replace(/-/g, '/').split('/').filter(item => item).map(item => hl.common.firstUpcase(item)).join('')
+      route.name = route.path.replace(/-/g, '/').split('/').filter(item => item).map(item => firstUpcase(item)).join('')
       route.component = loadView(route)
     }
     if (route.children != null && route.children && route.children.length) {
@@ -125,6 +129,11 @@ function filterChildren(childrenMap, lastRouter = false) {
  */
 function loadView(route) {
   let comp = route.component
+
+  // 是按需加载的组件的方法
+  if (typeof comp === 'function') {
+    return comp
+  }
 
   if (route.is_frame === 1) {
     comp = 'outer-iframe/IframeTemplate'

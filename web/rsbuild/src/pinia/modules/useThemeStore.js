@@ -1,5 +1,5 @@
 import { colors_config } from '@/layout/theme/inner.theme'
-import { isLight, mix, set16ToRgb } from '@hl/utils'
+import { isLight, mix, set16ToRgb } from '@muyianking/utils'
 import variables from '@style/theme.module.scss'
 import { defineStore } from 'pinia'
 

@@ -1,4 +1,4 @@
-import { isTruth, readBlobAsJSON } from '@hl/utils'
+import { isTruth, readBlobAsJSON } from '@muyianking/utils'
 
 import axios from 'axios'
 
@@ -85,14 +85,7 @@ export class Http {
       // 认证失败：直接跳到登录
       if (+resp_error.errno === 401) {
         if (!window.location.href.includes('#/login')) {
-          let url = `#/login?msg=${encodeURIComponent(resp_error.error)}`
-          const user = useUserStore()
-          // 八小时内未操作直接跳到登录不提示登录过期：这里解决的是关闭页面
-          if (!user || (Date.now() - user.token_expire > 4 * 60 * 60 * 1000)) {
-            url = `#/login`
-          }
-
-          window.location.href = url
+          window.location.href = `#/login?msg=${encodeURIComponent(resp_error.error)}`
           setTimeout(() => {
             window.location.reload()
           }, 500)
@@ -165,7 +158,7 @@ export class Http {
       config.onUploadProgress = params.onProgress
     }
 
-    return this.instance.post(params.url || hl.api.upload, data, config)
+    return this.instance.post(params.url, data, config)
   }
 
   /**
