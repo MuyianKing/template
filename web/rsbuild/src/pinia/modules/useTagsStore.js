@@ -1,17 +1,36 @@
+import router from '@/router'
 import { cloneDeep } from 'lodash-es'
 import { defineStore } from 'pinia'
 
+export function isHome(path) {
+  return path === '/home'
+}
+
+export function getHomePathData() {
+  const route = router.getRoutes().filter(item => isHome(item.path))[0]
+
+  return {
+    name: route.name,
+    title: route.meta.title,
+    path: route.path,
+  }
+}
+
 export default defineStore('tags', {
   state: () => ({
+    // 不保存首页
     tagsList: [],
     // 重新加载页面
     reload: true,
   }),
   actions: {
     delTagsItem(index) {
-      this.tagsList.splice(index, 1)
+      this.tagsList.splice(index - 1, 1)
     },
     setTagsItem(data) {
+      if (isHome(data.path)) {
+        return
+      }
       this.tagsList.push(data)
     },
     clearTags() {
@@ -23,15 +42,8 @@ export default defineStore('tags', {
   },
   getters: {
     _tags_list() {
-      const index = this.tagsList.findIndex(item => item.path === '/' || item.path === '/home')
       const list = cloneDeep(this.tagsList)
-
-      if (index > 0) {
-        const router = list.splice(index, 1)
-        if (router && router[0]) {
-          list.unshift(router[0])
-        }
-      }
+      list.unshift(getHomePathData())
       return list
     },
   },

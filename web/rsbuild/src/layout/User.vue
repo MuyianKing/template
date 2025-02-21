@@ -1,4 +1,5 @@
 <script setup>
+import multiavatar from '@multiavatar/multiavatar/esm'
 import { logout } from '@server/user'
 
 // 用户名下拉菜单选择事件
@@ -16,11 +17,16 @@ function handleDown(command) {
     router.push('/user/info')
   }
 }
+
+const svgCode = computed(() => multiavatar(user.name || '用户'))
 </script>
 
 <template>
   <el-dropdown class="user-name" trigger="click" @command="handleDown">
     <div class="el-dropdown-link inline-flex items-center cursor-pointer">
+      <el-avatar>
+        <div class="w-full h-full" v-html="svgCode" />
+      </el-avatar>
       <div class="ml-2">
         <span>{{ user.name }}</span>
         <div v-if="organization.organization_id" class="org-box">
@@ -30,7 +36,7 @@ function handleDown(command) {
     </div>
     <template #dropdown>
       <el-dropdown-menu>
-        <el-dropdown-item command="loginout" divided>
+        <el-dropdown-item command="loginout">
           退出登录
         </el-dropdown-item>
       </el-dropdown-menu>

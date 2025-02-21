@@ -2,7 +2,6 @@
 import TagsLayout from '@layout/Tags.vue'
 import ThemeLayout from '@layout/theme/Index.vue'
 import { exitFullScreen, openFullScreen } from '@muyianking/utils'
-
 import UserInfo from './User.vue'
 
 const isfull = ref(false)

@@ -139,19 +139,21 @@ onMounted(() => {
   width: var(--side-width);
 }
 
-:deep(.el-menu-item) {
-  height: var(--side-menu-item-height);
-
-  &:hover {
-    color: var(--color-primary);
-  }
-}
-
-:deep(.el-menu-item.is-active) {
-  color: var(--side-light-color);
-}
-
 :deep(.el-menu) {
   border-right: 0 !important;
+
+  .el-menu-item {
+    height: var(--side-menu-item-height);
+
+    &:hover {
+      color: white;
+      background-color: var(--el-menu-bg-hover-color);
+    }
+  }
+
+  .el-menu-item.is-active {
+    color: var(--side-light-color);
+    background-color: var(--el-menu-bg-light-color);
+  }
 }
 </style>

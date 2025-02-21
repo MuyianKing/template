@@ -3,19 +3,19 @@ import variables from '@style/theme.module.scss'
 // 主题色配置
 export const colors_config = [{
   label: '主色',
-  key: 'color-primary',
+  key: 'colorPrimary',
 }, {
   label: '成功',
-  key: 'color-success',
+  key: 'colorSuccess',
 }, {
   label: '警告',
-  key: 'color-warning',
+  key: 'colorWarning',
 }, {
   label: '危险',
-  key: 'color-danger',
+  key: 'colorDanger',
 }, {
   label: '信息',
-  key: 'color-info',
+  key: 'colorInfo',
 }]
 
 // 内置主题
@@ -28,31 +28,44 @@ export const innerTheme = [{
 }]
 
 // 侧边栏
-export const side_bg_config = [{
-  label: '背景色',
-  key: 'side-bg',
-}, {
-  label: '文字高亮',
-  key: 'side-light-color',
-}, {
-  label: '整体宽度',
-  key: 'side-width',
-  type: 'input',
-}, {
-  label: '元素高度',
-  key: 'side-menu-item-height',
-  type: 'input',
-}]
+export const side_bg_config = [
+  {
+    label: '背景色',
+    key: 'sideBg',
+  },
+  {
+    label: '背景高亮',
+    key: 'sideBgLight',
+  },
+  {
+    label: '背景悬浮',
+    key: 'sideBgHover',
+  },
+  {
+    label: '文字高亮',
+    key: 'sideLightColor',
+  },
+  {
+    label: '整体宽度',
+    key: 'sideWidth',
+    type: 'input',
+  },
+  {
+    label: '元素高度',
+    key: 'sideMenuItemHeight',
+    type: 'input',
+  },
+]
 
 // 导航栏
 export const tab_bar_config = [{
   label: '背景色',
-  key: 'tab-bg',
+  key: 'tabBg',
 }, {
   label: '文字高亮',
-  key: 'tab-light-color',
+  key: 'tabLightColor',
 }, {
   label: '高度',
-  key: 'tab-height',
+  key: 'tabHeight',
   type: 'input',
 }]

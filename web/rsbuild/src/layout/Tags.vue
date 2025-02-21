@@ -11,7 +11,12 @@ const showTags = computed(() => tagsList.value.length > 0)
 
 // 关闭单个标签
 function closeTags(index) {
+  console.log('index', index)
+
   const delItem = tagsList.value[index]
+
+  console.log(delItem)
+
   tags.delTagsItem(index)
   // 删除的是当前激活的路由标签
   if (delItem.path === route.path) {
@@ -101,11 +106,9 @@ function iconCloseTags(item) {
   <div v-if="showTags" class="tags">
     <el-scrollbar class="flex-1 pr-4 h-full">
       <div class="flex h-full">
-        <router-link v-for="(item, index) in tagsList" :key="index" :class="{ active: isActive(item.path) }" :title="item.title" :to="item.path"
-                     class="tags-li" @contextmenu.prevent="toggle({ index, path: item.path })"
-        >
+        <router-link v-for="(item, index) in tagsList" :key="index" :class="{ active: isActive(item.path) }" :title="item.title" :to="item.path" class="tags-li" @contextmenu.prevent="toggle({ index, path: item.path })">
           <span class="tags-li-title">{{ item.title }}</span>
-          <mu-icon v-if="tagsList.length > 1" class="tags-close-box" icon="typcn:delete-outline" @click.stop.prevent="iconCloseTags(item)" />
+          <mu-icon v-if="tagsList.length > 1 && item.path !== '/home'" class="tags-close-box" icon="typcn:delete-outline" @click.stop.prevent="iconCloseTags(item)" />
         </router-link>
       </div>
     </el-scrollbar>
@@ -128,6 +131,7 @@ function iconCloseTags(item) {
 }
 
 .tags-li {
+  position: relative;
   flex-shrink: 0;
   height: auto;
   overflow: hidden;
@@ -164,20 +168,12 @@ function iconCloseTags(item) {
 .tags-close-box {
   display: none;
   margin-left: 5px;
-  transition: all 0.3s ease-in;
+  position: absolute;
+  right: 5px;
 }
 
 .tags-li.active .tags-li-title {
   color: var(--tab-light-color);
-}
-
-.tags-close-box {
-  flex-shrink: 0;
-
-  :deep(.el-button) {
-    height: 28px;
-    line-height: 28px;
-  }
 }
 
 :deep(.el-scrollbar) {
@@ -192,6 +188,7 @@ function iconCloseTags(item) {
   height: auto !important;
   top: 45px !important;
   line-height: 32px;
+
   :deep(.arrow) {
     top: 0;
   }
