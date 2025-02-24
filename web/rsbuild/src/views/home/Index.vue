@@ -1,12 +1,10 @@
 <script setup>
-import variables from '@style/theme.module.scss'
 
-console.log(variables)
 </script>
 
 <template>
-  <div class=" home-wrapper text-center w-f-m-20 ">
-    hello world
+  <div class=" home-wrapper text-center w-f-m-20">
+    hello world!
   </div>
 </template>
 
