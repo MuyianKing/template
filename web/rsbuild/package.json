@@ -19,7 +19,7 @@
     "@muyianking/ui": "0.0.1-beta.7",
     "@muyianking/utils": "^0.1.1",
     "@vueuse/core": "^12.7.0",
-    "axios": "^1.7.9",
+    "axios": "^1.8.1",
     "dayjs": "^1.11.13",
     "dom-to-image-more": "^3.5.0",
     "echarts": "^5.6.0",
@@ -42,7 +42,7 @@
     "@eslint/eslintrc": "^3.3.0",
     "@iconify/vue": "^4.3.0",
     "@muyianking/config": "^0.0.8",
-    "@rsbuild/core": "1.2.11",
+    "@rsbuild/core": "1.2.12",
     "@rsbuild/plugin-basic-ssl": "^1.1.1",
     "@rsbuild/plugin-image-compress": "^1.1.0",
     "@rsbuild/plugin-sass": "1.2.2",
@@ -54,11 +54,11 @@
     "eslint-plugin-format": "^1.0.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
-    "sass": "^1.85.0",
+    "sass": "^1.85.1",
     "tailwindcss": "3.4.17",
-    "unplugin-auto-import": "^19.1.0",
+    "unplugin-auto-import": "^19.1.1",
     "unplugin-element-plus": "^0.9.1",
-    "unplugin-vue-components": "^28.4.0"
+    "unplugin-vue-components": "^28.4.1"
   },
   "pnpm": {
     "ignoredBuiltDependencies": [
