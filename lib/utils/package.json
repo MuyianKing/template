@@ -1,0 +1,71 @@
+{
+  "name": "@muyianking/demo",
+  "type": "module",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MuyianKing/demo.git"
+  },
+  "keywords": [
+    "MIT",
+    "vue3",
+    "demo",
+    "typescript"
+  ],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js"
+    }
+  },
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "scripts": {
+    "build": "node ./script/build.js",
+    "dev": "rslib build --watch",
+    "update-deps": "npm-check-updates && ncu -u && pnpm i",
+    "commit": "git add . && git cz",
+    "release": "node ./script/publish.js",
+    "log": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.3.0",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "@eslint/eslintrc": "^3.3.0",
+    "@muyianking/build": "^0.0.4",
+    "@muyianking/config": "^0.0.8",
+    "@rslib/core": "^0.5.2",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.13.7",
+    "cz-git": "^1.11.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-format": "^1.0.1",
+    "fs-extra": "^11.3.0",
+    "husky": "^9.1.7",
+    "inquirer": "^12.4.2",
+    "lint-staged": "^15.4.3",
+    "ora": "^8.2.0",
+    "typescript": "^5.8.2"
+  },
+  "resolutions": {
+    "bin-wrapper": "npm:bin-wrapper-china"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix"
+    ]
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
