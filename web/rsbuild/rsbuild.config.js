@@ -46,8 +46,10 @@ export default defineConfig({
       ],
     },
   },
-  source: {
+  resolve: {
     alias: alias_map,
+  },
+  source: {
     define: publicVars,
   },
   output: {

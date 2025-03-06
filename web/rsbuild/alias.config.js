@@ -1,4 +1,5 @@
-import { resolve } from 'node:path'
+import path, { resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 const alias_path = [
   ['@', './src'],
@@ -18,6 +19,8 @@ const alias_path = [
   ['@http', './src/utils/request'],
   ['@utils', './src/utils'],
 ]
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default function useAlias() {
   // 处理成vite需要的格式
