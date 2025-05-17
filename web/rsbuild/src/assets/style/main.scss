@@ -1,7 +1,5 @@
 // 通用配置
-
-@tailwind components;
-@tailwind utilities;
+@unocss;
 
 * {
   margin: 0;
@@ -23,7 +21,7 @@ a {
   text-decoration: none;
 }
 
-.el-button + .el-tooltip {
+.el-button+.el-tooltip {
   margin-left: 10px;
 }
 

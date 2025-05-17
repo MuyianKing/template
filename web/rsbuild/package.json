@@ -1,5 +1,5 @@
 {
-  "name": "zj-powering-center",
+  "name": "muyian-rsbuild-web-demo",
   "type": "module",
   "version": "0.0.1",
   "private": false,
@@ -8,7 +8,7 @@
     "build": "npx rsbuild build --mode production",
     "build:analyze": "cross-env BUNDLE_ANALYZE=true rsbuild build --mode production",
     "preview": "rsbuild preview",
-    "update-dep": "npm-check-updates -x tailwindcss && ncu -u -x tailwindcss && pnpm i",
+    "update-deps": "npm-check-updates && ncu -u && pnpm i",
     "commit": "git add . && git cz",
     "lint": "git add . && lint-staged",
     "husky-lint": "git add . && lint-staged",
@@ -47,6 +47,7 @@
     "@rsbuild/plugin-image-compress": "^1.2.0",
     "@rsbuild/plugin-sass": "1.3.1",
     "@rsbuild/plugin-vue": "1.0.7",
+    "@unocss/postcss": "^66.1.2",
     "@vue/compiler-sfc": "^3.5.14",
     "cross-env": "^7.0.3",
     "cz-git": "^1.11.1",
@@ -55,7 +56,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.0.0",
     "sass": "^1.89.0",
-    "tailwindcss": "3.4.17",
+    "unocss": "^66.1.2",
     "unplugin-auto-import": "^19.2.0",
     "unplugin-element-plus": "^0.10.0",
     "unplugin-vue-components": "^28.5.0"
