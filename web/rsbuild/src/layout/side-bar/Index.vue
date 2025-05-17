@@ -72,7 +72,7 @@ onMounted(() => {
     <el-menu :collapse :default-active="onRoutes" class="sidebar-el-menu" unique-opened router>
       <div class="web-name-wrapper">
         <div v-show="!collapse" class="web-name">
-          <el-link :underline="false" class="logo" href="/#/">
+          <el-link underline="hover" class="logo" href="/#/">
             {{ WEB_NAME }}
           </el-link>
         </div>
