@@ -1,5 +1,5 @@
 <script setup>
-import { AUDIO_SUFFIX, FILE_SUFFIX } from '@hl/utils'
+import { AUDIO_SUFFIX, FILE_SUFFIX } from '@muyianking/utils'
 import PreviewComp from './components/Preview.vue'
 import UploadProgress from './components/Progress.vue'
 import TriggerComp from './components/Trigger.vue'

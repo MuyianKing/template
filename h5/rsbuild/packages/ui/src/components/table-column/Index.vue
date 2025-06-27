@@ -1,6 +1,6 @@
 <script setup name="HlTableColumn">
-import { guid } from '@hl/utils'
-import { storage } from '@hl/utils'
+import { guid } from '@muyianking/utils'
+import { storage } from '@muyianking/utils'
 
 const props = defineProps({
   type: {

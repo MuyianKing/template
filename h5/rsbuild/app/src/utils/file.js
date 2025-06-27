@@ -1,4 +1,4 @@
-import { download } from '@hl/utils'
+import { download } from '@muyianking/utils'
 import { BASE_URL } from './app'
 
 /**

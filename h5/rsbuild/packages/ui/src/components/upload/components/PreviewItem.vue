@@ -1,5 +1,5 @@
 <script setup>
-import { getSuffix, getType } from '@hl/utils'
+import { getSuffix, getType } from '@muyianking/utils'
 import HlIcon from '../../icon/Index.vue'
 
 const props = defineProps({

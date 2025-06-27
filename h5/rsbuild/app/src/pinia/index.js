@@ -1,5 +1,5 @@
 import { PROJECT_PREFIX } from '@app'
-import { storage } from '@hl/utils'
+import { storage } from '@muyianking/utils'
 import { createPinia } from 'pinia'
 import { createPersistedState } from 'pinia-plugin-persistedstate'
 

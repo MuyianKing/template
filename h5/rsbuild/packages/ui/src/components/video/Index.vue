@@ -1,5 +1,5 @@
 <script setup>
-import { openFullScreen } from '@hl/utils'
+import { openFullScreen } from '@muyianking/utils'
 
 const props = defineProps({
   src: {

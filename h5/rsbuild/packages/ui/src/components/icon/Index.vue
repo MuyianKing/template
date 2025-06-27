@@ -1,5 +1,5 @@
 <script setup name="HlIcon">
-import { getCanUseValue } from '@hl/utils'
+import { getCanUseValue } from '@muyianking/utils'
 import { Icon } from '@iconify/vue'
 
 const props = defineProps({

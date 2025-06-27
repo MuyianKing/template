@@ -1,5 +1,5 @@
 <script setup>
-import * as v from '@hl/utils/es/validator'
+import * as v from '@muyianking/utils/es/validator'
 import { get } from 'lodash-es'
 
 const props = defineProps({

@@ -1,4 +1,4 @@
-import { isOverflow } from '@hl/utils'
+import { isOverflow } from '@muyianking/utils'
 
 export default {
   name: 'HlTableBody',

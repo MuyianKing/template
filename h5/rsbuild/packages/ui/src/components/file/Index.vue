@@ -1,5 +1,5 @@
 <script setup>
-import { getType } from '@hl/utils'
+import { getType } from '@muyianking/utils'
 import AudioPlayer from '../audio/Index.vue'
 
 const { downloadFile } = inject('GLOBAL_CUSTOM_CONFIG', null)

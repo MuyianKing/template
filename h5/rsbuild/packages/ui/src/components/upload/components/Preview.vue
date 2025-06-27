@@ -1,5 +1,5 @@
 <script setup>
-import { getType } from '@hl/utils'
+import { getType } from '@muyianking/utils'
 import HlIcon from '../../icon/Index.vue'
 import HlImage from '../../image/Index.vue'
 import HlVideo from '../../video/Index.vue'

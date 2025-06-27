@@ -1,5 +1,5 @@
 import { BASE_URL } from '@app'
-import { isTruth } from '@hl/utils'
+import { isTruth } from '@muyianking/utils'
 import axios from 'axios'
 
 class CustomError extends Error {

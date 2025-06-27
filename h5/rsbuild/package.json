@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@hl/utils": "0.7.0",
+    "@muyianking/utils": "^0.1.1",
     "@vant/use": "^1.6.0",
     "@vueuse/core": "^11.2.0",
     "axios": "^1.7.7",
@@ -37,5 +37,12 @@
     "tailwindcss": "^3.4.14",
     "unplugin-auto-import": "^0.18.3",
     "unplugin-vue-components": "^0.27.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "core-js",
+      "vue-demi"
+    ]
   }
 }

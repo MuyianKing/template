@@ -1,4 +1,4 @@
-import { generateApis } from '@hl/utils'
+import { generateApis } from '@muyianking/utils'
 import { globImport } from '@utils/build'
 
 /**
