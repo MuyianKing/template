@@ -2,7 +2,7 @@ import { firstUpcase } from '@muyianking/utils'
 import { getRouters } from '@server/resource'
 import { cloneDeep } from 'lodash-es'
 import { defineStore } from 'pinia'
-import pages from '@/pages'
+import statisticRouter from "@/router/menu/statistic.router"
 
 const modules = getAllComps()
 
@@ -16,14 +16,11 @@ export default defineStore('dynamicRouter', {
     async initDynamicRoutes(router) {
       try {
         this.list = [
-          // ...statisticRouter,
+          ...statisticRouter,
           ...await getRouters(),
         ]
 
         const routes = filterAsyncRouter(cloneDeep(this.list))
-        console.log(routes);
-        
-
         addRoutes(router, routes)
       } catch (e) {
         console.log(e.message)
@@ -77,7 +74,7 @@ function filterAsyncRouter(asyncRouterMap, type = false) {
     if (route.path && !route.is_frame) {
       route.path = route.path.startsWith('/') ? route.path : `/${route.path}`
     }
-    if (route.component) {
+    if (route.component || route.path) {
       route.name = route.path.replace(/-/g, '/').split('/').filter(item => item).map(item => firstUpcase(item)).join('')
       route.component = loadView(route)
     }
@@ -142,6 +139,10 @@ function loadView(route) {
     comp = 'outer-iframe/IframeTemplate'
   }
 
+  if (!comp) {
+    comp = route.path
+  }
+
   // 统一在最前面加上/
   if (!comp.startsWith('/')) {
     comp = `/${comp}`
@@ -184,5 +185,12 @@ function parseParams(str) {
 
 // 获取views下所有组件
 function getAllComps() {
-  return pages
+  const routeComp = {}
+  const modules = import.meta.glob('@views/**/Index.vue')
+  for (const path in modules) {
+    let key = path.replace("/src/views", "").replace(".vue", "").toLowerCase()
+    routeComp[key] = modules[path]
+  }
+
+  return routeComp
 }

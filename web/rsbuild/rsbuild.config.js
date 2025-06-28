@@ -1,11 +1,15 @@
+import process from 'node:process'
 import { MuUiResolver } from '@muyianking/ui/resolver'
 import { defineConfig, loadEnv } from '@rsbuild/core'
 import { pluginImageCompress } from '@rsbuild/plugin-image-compress'
 import { pluginSass } from '@rsbuild/plugin-sass'
 import { pluginVue } from '@rsbuild/plugin-vue'
+import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin'
+import { UnoCSSRspackPlugin } from '@unocss/webpack/rspack'
 import AutoImport from 'unplugin-auto-import/rspack'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/rspack'
+
 import useAlias from './alias.config'
 
 const { alias_map } = useAlias()
@@ -43,6 +47,11 @@ export default defineConfig({
           dirs: ['./src/pinia/modules'],
           dts: true,
         }),
+        process.env.RSDOCTOR === 'true'
+        && new RsdoctorRspackPlugin({
+          // 插件选项
+        }),
+        UnoCSSRspackPlugin(),
       ],
     },
   },
@@ -59,6 +68,12 @@ export default defineConfig({
       js: false,
     },
   },
-  performance: {},
+  performance: {
+    // chunkSplit: {
+    //   strategy: 'split-by-size',
+    //   minSize: 30000,
+    //   maxSize: 50000,
+    // },
+  },
   dev: {},
 })

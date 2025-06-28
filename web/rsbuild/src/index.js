@@ -5,6 +5,7 @@ import App from '@/App.vue'
 import pinia from '@/pinia'
 import router from '@/router'
 import useEcharts from '../src/utils/echarts'
+import 'uno.css'
 
 useEcharts()
 

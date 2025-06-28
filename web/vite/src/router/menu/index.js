@@ -12,7 +12,7 @@ export default [
     path: '/',
     component: Layout,
     name: 'admin',
-    redirect: '/home',
+    redirect: '/home/index',
     children: [],
   },
 

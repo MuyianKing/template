@@ -1,4 +1,4 @@
-import { loading as startLoading, translateUnit } from '@muyianking/utils'
+import { translateUnit } from '@muyianking/utils'
 import domtoimage from 'dom-to-image-more'
 import { jsPDF as JsPDF } from 'jspdf'
 
@@ -78,7 +78,7 @@ export default function usePdf(selector, complete) {
 
   async function exportPdf(fileName) {
     isExport.value = true
-    loading = startLoading('正在导出PDF，请稍后...')
+    // loading = startLoading('正在导出PDF，请稍后...')
     setTimeout(() => {
       downloadPdf(fileName)
     }, 1500)

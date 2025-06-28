@@ -3,7 +3,7 @@ import { cloneDeep } from 'lodash-es'
 import { defineStore } from 'pinia'
 
 export function isHome(path) {
-  return path === '/home'
+  return path === '/home' || path === '/home/index'
 }
 
 export function getHomePathData() {

@@ -1,9 +1,9 @@
-import pages from '@/pages'
-import statisticRouter from '@/router/menu/statistic.router'
 import { firstUpcase } from '@muyianking/utils'
 import { getRouters } from '@server/resource'
 import { cloneDeep } from 'lodash-es'
 import { defineStore } from 'pinia'
+import pages from '@/pages'
+// import statisticRouter from '@/router/menu/statistic.router'
 
 const modules = getAllComps()
 
@@ -17,11 +17,13 @@ export default defineStore('dynamicRouter', {
     async initDynamicRoutes(router) {
       try {
         this.list = [
-          ...statisticRouter,
+          // ...statisticRouter,
           ...await getRouters(),
         ]
 
-        addRoutes(router, filterAsyncRouter(cloneDeep(this.list)))
+        const routes = filterAsyncRouter(cloneDeep(this.list))
+
+        addRoutes(router, routes)
       } catch (e) {
         console.log(e.message)
       }
@@ -151,6 +153,7 @@ function loadView(route) {
       break
     }
   }
+
   return res
 }
 

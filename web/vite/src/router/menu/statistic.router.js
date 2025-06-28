@@ -1,15 +1,13 @@
 export default [
   {
-    path: '/home',
-    component: () => import('@/views/home/Home.vue'),
+    path: '/home/index',
     meta: {
       title: '首页',
       icon: 'material-symbols:home',
     },
   },
   {
-    path: '/icon',
-    component: () => import('@/views/icon/icon.vue'),
+    path: '/icon/index',
     meta: {
       title: '图标',
       icon: 'logos:hugging-face-icon',

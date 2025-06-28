@@ -1,4 +1,7 @@
 <script setup>
+onMounted(() => {
+  console.log('icon mounted')
+})
 </script>
 
 <template>

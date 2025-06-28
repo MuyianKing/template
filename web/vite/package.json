@@ -36,6 +36,7 @@
     "@eslint/eslintrc": "^3.3.1",
     "@iconify/vue": "^5.0.0",
     "@muyianking/config": "^0.0.8",
+    "@unocss/postcss": "^66.3.2",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/compiler-sfc": "^3.5.17",
     "cz-git": "^1.11.2",

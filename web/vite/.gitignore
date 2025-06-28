@@ -8,17 +8,35 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.DS_Store
 dist
+build
 dist-ssr
+coverage
 *.local
 
+/cypress/videos/
+/cypress/screenshots/
+
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+*.tsbuildinfo
+docs/.vitepress/cache
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+packages/dist-*/*
+packages/task
+!packages/dist-*/package.json
+stats.html
+.eslintrc-auto-import.json
+auto-imports.d.ts
+components.d.ts
+vite.config.js.timestamp*

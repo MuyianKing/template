@@ -1,14 +1,9 @@
 // 引入柱状图图表，图表后缀都为 Chart
 import {
   BarChart,
-  EffectScatterChart,
   LineChart,
   LinesChart,
-  PictorialBarChart,
   PieChart,
-  SunburstChart,
-  TreeChart,
-  TreemapChart,
 } from 'echarts/charts'
 
 // 引入提示框，标题，直角坐标系，数据集，内置数据转换器组件，组件后缀都为 Component
@@ -46,13 +41,8 @@ export default function useEcharts() {
     GeoComponent,
     BarChart,
     PieChart,
-    PictorialBarChart,
     LinesChart,
-    EffectScatterChart,
     LineChart,
     DataZoomComponent,
-    TreeChart,
-    TreemapChart,
-    SunburstChart,
   ])
 }
