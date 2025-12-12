@@ -36,9 +36,6 @@
       "@style/*": [
         "./src/assets/style/*"
       ],
-      "@muyianking/utils": [
-        "../../node_modules/@muyianking/utils/*"
-      ],
       "@api/*": [
         "./src/api"
       ],

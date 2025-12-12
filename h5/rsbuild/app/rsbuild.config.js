@@ -10,9 +10,12 @@ import { VantResolver } from '@vant/auto-import-resolver'
 import AutoImport from 'unplugin-auto-import/rspack'
 import Components from 'unplugin-vue-components/rspack'
 import useAlias from './alias.config'
+import { fileURLToPath } from 'node:url'
 
 const { publicVars } = loadEnv({ prefixes: ['VITE_'] })
 const { alias_map } = useAlias()
+
+const __dirname = fileURLToPath(import.meta.url)
 
 export default defineConfig({
   html: {
@@ -59,8 +62,10 @@ export default defineConfig({
       ],
     },
   },
-  source: {
+  resolve: {
     alias: alias_map,
+  },
+  source: {
     define: publicVars,
     include: [
       path.resolve(__dirname, '../../packages/ui'),

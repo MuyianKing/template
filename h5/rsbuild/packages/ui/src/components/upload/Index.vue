@@ -1,5 +1,5 @@
 <script setup>
-import { AUDIO_SUFFIX, FILE_SUFFIX } from '@muyianking/utils'
+import { AUDIO_SUFFIX, FILE_SUFFIX, guid } from '@muyianking/utils'
 import PreviewComp from './components/Preview.vue'
 import UploadProgress from './components/Progress.vue'
 import TriggerComp from './components/Trigger.vue'
@@ -85,7 +85,7 @@ function handleReupload(row) {
 // 选择文件后
 async function handleSelect(file) {
   let new_file = {
-    id: hl.common.guid(),
+    id: guid(),
     name: file.name,
     path: URL.createObjectURL(file),
   }

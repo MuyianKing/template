@@ -1,5 +1,5 @@
 <script setup>
-import * as v from '@muyianking/utils/es/validator'
+// import * as v from '@muyianking/utils'
 import { get } from 'lodash-es'
 
 const props = defineProps({
@@ -119,34 +119,34 @@ const rules_comp = computed(() => {
     rules_list.push({ required: true, message, trigger })
   }
 
-  if (props.idCard) {
-    rules_list.push({ validator: v.v_id_num, trigger })
-  }
+  // if (props.idCard) {
+  //   rules_list.push({ validator: v.v_id_num, trigger })
+  // }
 
-  // 手机号
-  if (props.phone) {
-    rules_list.push({ validator: v.v_phone, trigger })
-  }
+  // // 手机号
+  // if (props.phone) {
+  //   rules_list.push({ validator: v.v_phone, trigger })
+  // }
 
-  // 车牌
-  if (props.carNum) {
-    rules_list.push({ validator: v.v_carnum, trigger })
-  }
+  // // 车牌
+  // if (props.carNum) {
+  //   rules_list.push({ validator: v.v_carnum, trigger })
+  // }
 
-  // 整型
-  if (props.integer) {
-    rules_list.push({ validator: v.v_int, trigger })
-  }
+  // // 整型
+  // if (props.integer) {
+  //   rules_list.push({ validator: v.v_int, trigger })
+  // }
 
-  // IP
-  if (props.ip) {
-    rules_list.push({ validator: v.v_ip, trigger })
-  }
+  // // IP
+  // if (props.ip) {
+  //   rules_list.push({ validator: v.v_ip, trigger })
+  // }
 
-  // 端口
-  if (props.port) {
-    rules_list.push({ validator: v.v_port, trigger })
-  }
+  // // 端口
+  // if (props.port) {
+  //   rules_list.push({ validator: v.v_port, trigger })
+  // }
 
   // 最小长度
   if (props.minLength) {

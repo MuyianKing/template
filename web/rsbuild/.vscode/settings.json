@@ -67,5 +67,9 @@
     "json",
     "jsonc",
     "yaml"
-  ]
+  ],
+  "files.watcherExclude": {
+    "**/public/**": true,
+    "**/.cache/**": true
+  }
 }

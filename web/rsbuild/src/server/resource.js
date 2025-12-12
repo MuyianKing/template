@@ -6,7 +6,7 @@ export async function getRouters() {
     return [
       {
         path: '/home',
-        component: '/home/home',
+        component: '/home/index',
         meta: {
           title: '首页',
           icon: 'material-symbols:home',
@@ -14,7 +14,7 @@ export async function getRouters() {
       },
       {
         path: '/icon',
-        component: '/icon/icon',
+        component: '/icon/index',
         meta: {
           title: '图标',
           icon: 'logos:hugging-face-icon',

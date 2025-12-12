@@ -55,7 +55,7 @@
   },
   "include": [
     "**/*"
-  ],
+, "src/views/home/Index.vue"  ],
   "exclude": [
     "node_modules",
     "dist"

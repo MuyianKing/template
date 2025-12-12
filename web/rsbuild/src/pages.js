@@ -18,6 +18,9 @@ for (const key of context.keys()) {
   routeComp[routePath.toLowerCase()] = async () => context(key).default
 }
 
+console.log("routeComp",routeComp);
+
+
 export default routeComp
 
 // /**

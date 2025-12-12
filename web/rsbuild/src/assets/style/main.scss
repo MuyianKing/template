@@ -1,5 +1,6 @@
 // 通用配置
-// @unocss;
+@unocss preflights;
+@unocss default;
 
 * {
   margin: 0;

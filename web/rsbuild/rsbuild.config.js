@@ -5,7 +5,6 @@ import { pluginImageCompress } from '@rsbuild/plugin-image-compress'
 import { pluginSass } from '@rsbuild/plugin-sass'
 import { pluginVue } from '@rsbuild/plugin-vue'
 import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin'
-import { UnoCSSRspackPlugin } from '@unocss/webpack/rspack'
 import AutoImport from 'unplugin-auto-import/rspack'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/rspack'
@@ -51,7 +50,6 @@ export default defineConfig({
         && new RsdoctorRspackPlugin({
           // 插件选项
         }),
-        UnoCSSRspackPlugin(),
       ],
     },
   },

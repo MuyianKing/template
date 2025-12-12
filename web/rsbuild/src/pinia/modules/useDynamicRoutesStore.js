@@ -23,6 +23,9 @@ export default defineStore('dynamicRouter', {
 
         const routes = filterAsyncRouter(cloneDeep(this.list))
 
+        console.log(routes);
+        
+
         addRoutes(router, routes)
       } catch (e) {
         console.log(e.message)
@@ -145,6 +148,9 @@ function loadView(route) {
   if (!comp.startsWith('/')) {
     comp = `/${comp}`
   }
+
+  console.log(comp);
+  
 
   let res = null
   for (const path in modules) {

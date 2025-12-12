@@ -3,10 +3,7 @@ import App from '@/App.vue'
 import pinia from '@/pinia'
 import router from '@/router'
 import * as message from '@hl/h5/src/utils/message'
-import * as common from '@muyianking/utils/es/common'
-import * as file from '@muyianking/utils/es/file'
-import storage from '@muyianking/utils/es/storage'
-import useIcon from '@utils/icon'
+import { storage } from '@muyianking/utils'
 import dayjs from 'dayjs'
 import { Lazyload } from 'vant'
 import { createApp } from 'vue'
@@ -14,15 +11,11 @@ import { VuePageStackPlugin } from 'vue-page-stack'
 import '@style/main.scss'
 import '@style/util.scss'
 
-// 使用图标
-useIcon()
 
 // 全局属性
 window.dayjs = dayjs
 window.hl = {
   storage,
-  file,
-  common,
   api,
   message,
 }

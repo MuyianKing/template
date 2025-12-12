@@ -1,5 +1,4 @@
 <script setup>
-import { getUrlParam } from '@hl/utils'
 import { login } from '@server/user'
 
 const userStore = useUserStore()
@@ -28,7 +27,7 @@ async function afterLogin() {
   const path = window.location.origin + window.location.pathname
 
   window.history.replaceState(null, '', `${path}#/tabs/home/index`)
-  const new_url = decodeURIComponent(getUrlParam('url')) || '/tabs/home/index'
+  const new_url = '/tabs/home/index'
   window.location.href = `${path}#${new_url}`
 }
 </script>

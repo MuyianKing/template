@@ -7,13 +7,20 @@ import tabs from './tabbar'
 export default [
   {
     path: '/',
-    redirect: '/login',
+    redirect: '/home',
   },
   {
     path: '/login',
     component: () => import('@views/login/Index.vue'),
     meta: {
       title: '登录',
+    },
+  },
+  {
+    path: '/home',
+    component: () => import('@views/home/Index.vue'),
+    meta: {
+      title: '首页',
     },
   },
   tabs,
