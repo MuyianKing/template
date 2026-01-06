@@ -1,4 +1,4 @@
-import variables from '@style/theme.module.scss'
+import variables from '@style/theme.module.css'
 
 // 主题色配置
 export const colors_config = [{

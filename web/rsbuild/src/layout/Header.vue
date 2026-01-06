@@ -1,17 +1,17 @@
 <script setup>
-import TagsLayout from '@layout/Tags.vue'
-import ThemeLayout from '@layout/theme/Index.vue'
-import { exitFullScreen, openFullScreen } from '@muyianking/utils'
-import UserInfo from './User.vue'
+import TagsLayout from "@layout/Tags.vue";
+import ThemeLayout from "@layout/theme/Index.vue";
+import { exitFullScreen, openFullScreen } from "@muyianking/utils";
+import UserInfo from "./User.vue";
 
-const isfull = ref(false)
+const isfull = ref(false);
 
 function fullScreen() {
-  isfull.value = !isfull.value
+  isfull.value = !isfull.value;
   if (isfull.value) {
-    openFullScreen()
+    openFullScreen();
   } else {
-    exitFullScreen()
+    exitFullScreen();
   }
 }
 </script>
@@ -23,7 +23,11 @@ function fullScreen() {
       <div class="header-right">
         <div class="header-user-con">
           <theme-layout class="cursor-pointer" />
-          <mu-icon class="cursor-pointer" icon="icon-park-outline:full-screen" @click="fullScreen" />
+          <mu-icon
+            class="cursor-pointer"
+            icon="icon-park-outline:full-screen"
+            @click="fullScreen"
+          />
           <user-info />
         </div>
       </div>
@@ -31,11 +35,9 @@ function fullScreen() {
   </div>
 </template>
 
-<style lang="scss" scoped>
-$tab-height: var(--tab-height);
-
+<style scoped>
 .outer-header {
-  height: $tab-height;
+  height: var(--tab-height);
   transition: all linear 0.2s;
 }
 
@@ -43,7 +45,7 @@ $tab-height: var(--tab-height);
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  height: $tab-height;
+  height: var(--tab-height);
   color: var(--el-bar-text-color);
   display: flex;
   justify-content: space-between;
@@ -65,7 +67,7 @@ $tab-height: var(--tab-height);
 
 .header-user-con {
   display: flex;
-  height: $tab-height;
+  height: var(--tab-height);
   align-items: center;
 
   & > * {

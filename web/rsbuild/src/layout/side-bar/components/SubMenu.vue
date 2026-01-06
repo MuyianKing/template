@@ -57,7 +57,7 @@ function appendToken(path) {
   </template>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .top-item-icon {
   width: 25px;
   flex-shrink: 0;

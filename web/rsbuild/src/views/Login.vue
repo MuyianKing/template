@@ -87,9 +87,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style lang="scss" scoped>
-$url: '@img/login/';
-
+<style lang="css" scoped>
 * {
   transition: all ease 0.4s;
 }
@@ -100,7 +98,7 @@ $url: '@img/login/';
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(#{$url}bg.jpg);
+  background-image: url(@img/login/bg.jpg);
   background-size: cover;
 
   .login-box-wrapper {
@@ -125,7 +123,7 @@ $url: '@img/login/';
       width: 60%;
       height: 100%;
       padding: 10px;
-      background-image: url(#{$url}left-bg.jpg);
+      background-image: url(@img/login/left-bg.jpg);
       background-size: 100% 100%;
       background-position: center top;
       background-repeat: no-repeat;
@@ -189,7 +187,7 @@ $url: '@img/login/';
     width: 100% !important;
     margin: 0 auto;
     background-color: transparent !important;
-    background-image: url(#{$url}left-bg.jpg) !important;
+    background-image: url(@img/login/left-bg.jpg) !important;
     background-size: 100% 100% !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;

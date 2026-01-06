@@ -12,8 +12,4 @@ const userStore = useUserStore()
   </el-config-provider>
 </template>
 
-<style lang="scss">
-@use '@style/custome.scss';
-@use '@style/main.scss';
-@use '@style/utils.scss';
-</style>
+<style></style>

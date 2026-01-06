@@ -1,10 +1,14 @@
-import variables from '@style/theme.module.scss'
+import variables from '@style/theme.module.css'
 import dayjs from 'dayjs'
 import { createApp } from 'vue'
 import App from '@/App.vue'
 import pinia from '@/pinia'
 import router from '@/router'
 import useEcharts from '../src/utils/echarts'
+
+import '@style/main.css'
+import '@style/custome.css'
+import '@style/utils.css'
 
 useEcharts()
 

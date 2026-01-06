@@ -116,7 +116,7 @@ function iconCloseTags(item) {
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .tags {
   position: relative;
   display: flex;

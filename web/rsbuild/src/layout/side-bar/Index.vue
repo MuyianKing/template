@@ -2,7 +2,7 @@
 import { WEB_NAME } from '@app'
 import SubMenu from '@layout/side-bar/components/SubMenu.vue'
 import { hasResource } from '@server/user'
-import theme from '@style/theme.module.scss'
+import theme from '@style/theme.module.css'
 
 const route = useRoute()
 const onRoutes = computed(() => {
@@ -85,7 +85,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .anchor-index {
   user-select: none;
   transition: all linear 0.2s;

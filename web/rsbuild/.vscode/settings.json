@@ -11,6 +11,9 @@
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
   "css.customData": [
     ".vscode/unocss.json"
   ],

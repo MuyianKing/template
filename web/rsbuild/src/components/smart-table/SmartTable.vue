@@ -21,4 +21,4 @@ const props = defineProps({
   </el-table>
 </template>
 
-<style lang='scss' scoped></style>
+<style lang='css' scoped></style>

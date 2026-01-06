@@ -1,0 +1,34 @@
+:export {
+  /* 版本号：每次更换默认主题需要更新 */
+  version: 1;
+
+  /* 主题色 */
+  colorPrimary: #4165d7;
+  colorSuccess: #31db86;
+  colorWarning: #ff8e56;
+  colorDanger: #ff5656;
+  colorInfo: #babdc6;
+
+  /* 背景色 */
+  bgColor: #F5F6F6;
+
+  /* 导航栏背景色 */
+  tabBg: #fff;
+  /* 导航栏高度 */
+  tabHeight: 50px;
+  /* 导航栏文字高亮颜色 */
+  tabLightColor: #4165d7;
+
+  /* 侧边栏背景色 */
+  sideBg: #2c3147;
+  /* 侧边栏背景高亮色 */
+  sideBgLight: #4165d7;
+  /* 侧边栏hover背景色 */
+  sideBgHover: #0f142b;
+  /* 侧边栏文件高亮颜色 */
+  sideLightColor: #fff;
+  /* 侧边栏宽度 */
+  sideWidth: 220px;
+  /* 侧边栏el-menu-item的高度 */
+  sideMenuItemHeight: 45px;
+}

@@ -2,7 +2,6 @@ import process from 'node:process'
 import { MuUiResolver } from '@muyianking/ui/resolver'
 import { defineConfig, loadEnv } from '@rsbuild/core'
 import { pluginImageCompress } from '@rsbuild/plugin-image-compress'
-import { pluginSass } from '@rsbuild/plugin-sass'
 import { pluginVue } from '@rsbuild/plugin-vue'
 import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin'
 import AutoImport from 'unplugin-auto-import/rspack'
@@ -21,7 +20,6 @@ export default defineConfig({
   },
   plugins: [
     pluginVue(),
-    pluginSass(),
     pluginImageCompress(),
   ],
   tools: {
@@ -32,7 +30,7 @@ export default defineConfig({
           directoryAsNamespace: true,
           resolvers: [
             ElementPlusResolver({
-              importStyle: 'sass',
+              importStyle: 'css',
             }),
             MuUiResolver(),
           ],

@@ -116,7 +116,7 @@ const no_parent = ref(window.top === window.self)
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease;
@@ -127,7 +127,7 @@ const no_parent = ref(window.top === window.self)
   opacity: 0;
 }
 
-//滑动淡入淡出开始
+/* 滑动淡入淡出开始 */
 /* 离开 */
 .slide-fade-leave-to {
   opacity: 0;
@@ -140,7 +140,7 @@ const no_parent = ref(window.top === window.self)
   transform: translateX(-10px);
 }
 
-//滑动淡入淡出结束
+/* 滑动淡入淡出结束 */
 .hidden-hidden {
   width: 0 !important;
   height: 0;

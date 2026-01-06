@@ -14,7 +14,7 @@ function handleClose() {
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style scoped>
 .close-wrapper {
   position: fixed;
   left: 50%;

@@ -44,7 +44,7 @@ const svgCode = computed(() => multiavatar(user.name || '用户'))
   </el-dropdown>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .el-dropdown-link {
   cursor: pointer;
   color: var(--el-bar-text-color);

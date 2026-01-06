@@ -57,7 +57,7 @@ function handelReset() {
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style scoped>
 .inline-config {
   display: flex;
   align-items: center;

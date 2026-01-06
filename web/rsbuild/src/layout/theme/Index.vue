@@ -1,6 +1,6 @@
 <script setup>
 import ConfigItem from '@layout/theme/ConfigItem.vue'
-import variables from '@style/theme.module.scss'
+import variables from '@style/theme.module.css'
 import { colors_config, innerTheme, side_bg_config, tab_bar_config } from './inner.theme'
 
 const themeStore = useThemeStore()
@@ -109,7 +109,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .theme-wrapper {
   display: inline-flex;
   position: relative;
@@ -145,11 +145,11 @@ onMounted(() => {
     .inner-theme-colors {
       display: flex;
 
-      $width: 20px;
+      --width: 20px;
 
-      & > div {
-        width: $width;
-        height: $width;
+      &>div {
+        width: var(--width);
+        height: var(--width);
         border-radius: 3px;
         background-color: var(--color-primary);
         margin-right: 10px;

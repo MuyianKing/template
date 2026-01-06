@@ -2,7 +2,7 @@
   * 每个项目的自定义通用样式
  **/
 
-// 分页
+/* 分页 */
 .el-pagination {
 
   .btn-prev,
@@ -19,7 +19,7 @@
   }
 }
 
-// 表格
+/* 表格 */
 .mu-table-header {
   border-color: var(--color-primary) !important;
 
@@ -29,7 +29,8 @@
     .mu-table-th {
       color: white;
 
-      .el-dropdown { // 表头下拉筛选自定义样式
+      /* 表头下拉筛选自定义样式 */
+      .el-dropdown {
         color: inherit;
 
         .active-label {
@@ -75,7 +76,8 @@
     flex-wrap: wrap;
     align-items: center;
 
-    .preview-wrapper, .trigger-item {
+    .preview-wrapper,
+    .trigger-item {
       margin: 5px !important;
     }
   }
