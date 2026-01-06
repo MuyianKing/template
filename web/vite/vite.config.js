@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite'
+import { MuUiResolver } from '@muyianking/ui/resolver'
 import vue from '@vitejs/plugin-vue'
+import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
-import { MuUiResolver } from '@muyianking/ui/resolver'
-import UnoCSS from 'unocss/vite'
+import { defineConfig } from 'vite'
 
 import useAlias from './alias.config'
 
