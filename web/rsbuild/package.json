@@ -40,6 +40,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^6.7.3",
     "@eslint/eslintrc": "^3.3.3",
+    "@iconify/json": "^2.2.427",
     "@iconify/vue": "^5.0.0",
     "@muyianking/config": "^0.0.8",
     "@rsbuild/core": "1.7.1",
@@ -58,6 +59,7 @@
     "unocss": "66.5.12",
     "unplugin-auto-import": "^20.3.0",
     "unplugin-element-plus": "^0.11.2",
+    "unplugin-icons": "^22.5.0",
     "unplugin-vue-components": "^30.0.0"
   },
   "pnpm": {

@@ -1,7 +1,7 @@
-import { colors_config } from '@/layout/theme/inner.theme'
 import { isLight, mix, set16ToRgb } from '@muyianking/utils'
 import variables from '@style/theme.module.css'
 import { defineStore } from 'pinia'
+import { colors_config } from '@/layout/theme/inner.theme'
 
 function getKey(key) {
   return `${key.replace(/[A-Z]/g, (match) => {
@@ -57,6 +57,7 @@ export default defineStore('theme', {
 
         // 左边菜单栏hover背景色
         theme_style.push(`--el-menu-bg-hover-color:${theme.sideBgHover}`)
+        theme_style.push(`--el-menu-active-color:${theme.sideBgHover}`)
 
         // 左边菜单栏的字体颜色：根据背景色的深浅自动设置黑色或白色字体
         theme_style.push(`--el-menu-text-color:${isLight(set16ToRgb(theme.sideBg)) ? '#333' : '#eee'}`)

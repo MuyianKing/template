@@ -1,4 +1,6 @@
 <script setup>
+import icons from './icons'
+
 defineProps({
   menu: {
     type: Object,
@@ -40,13 +42,13 @@ function appendToken(path) {
   <template v-if="!menu.meta?.hide">
     <el-sub-menu v-if="menu.children && menu.children.length > 0" :key="menu.path" :index="pathResolve(menu)">
       <template #title>
-        <mu-icon v-if="menu.meta?.icon" :icon="menu.meta.icon" class="top-item-icon" />
+        <component :is="icons[menu.meta.icon]" v-if="menu.meta?.icon" class="top-item-icon" />
         <span class="item-title">{{ menu.meta?.title }}</span>
       </template>
       <sub-menu v-for="item in menu.children" :key="item.path" :menu="item" />
     </el-sub-menu>
     <el-menu-item v-else :index="pathResolve(menu, true)">
-      <mu-icon v-if="menu.meta?.icon" :icon="menu.meta.icon" class="top-item-icon" />
+      <component :is="icons[menu.meta.icon]" v-if="menu.meta?.icon" class="top-item-icon" />
       <template #title>
         <a v-if="menu.is_frame === 2" :href="pathResolve(menu)" target="_blank" class="item-title a-item" @click.stop>
           {{ menu.meta?.title }}
@@ -74,5 +76,11 @@ function appendToken(path) {
 .a-item {
   color: inherit;
   flex: 1;
+}
+
+:deep(.el-sub-menu__title) {
+  &:hover {
+    background-color: var(--el-menu-bg-hover-color);
+  }
 }
 </style>

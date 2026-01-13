@@ -4,7 +4,7 @@ export default [
     component: () => import('@/views/home/Index.vue'),
     meta: {
       title: '首页',
-      icon: 'material-symbols:home',
+      icon: 'MaterialSymbolsHome',
     },
   },
   {
@@ -12,7 +12,7 @@ export default [
     component: () => import('@/views/icon/Index.vue'),
     meta: {
       title: '图标',
-      icon: 'logos:hugging-face-icon',
+      icon: 'LogosHuggingFaceIcon',
     },
   },
 ]

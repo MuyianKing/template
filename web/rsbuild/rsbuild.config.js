@@ -5,6 +5,8 @@ import { pluginImageCompress } from '@rsbuild/plugin-image-compress'
 import { pluginVue } from '@rsbuild/plugin-vue'
 import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin'
 import AutoImport from 'unplugin-auto-import/rspack'
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/rspack'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/rspack'
 
@@ -25,6 +27,7 @@ export default defineConfig({
   tools: {
     rspack: {
       plugins: [
+        Icons({/* options */ }),
         Components({
           dts: true,
           directoryAsNamespace: true,
@@ -33,6 +36,7 @@ export default defineConfig({
               importStyle: 'css',
             }),
             MuUiResolver(),
+            IconsResolver(),
           ],
         }),
         AutoImport({

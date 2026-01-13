@@ -1,17 +1,17 @@
 <script setup>
-import TagsLayout from "@layout/Tags.vue";
-import ThemeLayout from "@layout/theme/Index.vue";
-import { exitFullScreen, openFullScreen } from "@muyianking/utils";
-import UserInfo from "./User.vue";
+import TagsLayout from '@layout/Tags.vue'
+import ThemeLayout from '@layout/theme/Index.vue'
+import { exitFullScreen, openFullScreen } from '@muyianking/utils'
+import UserInfo from './User.vue'
 
-const isfull = ref(false);
+const isfull = ref(false)
 
 function fullScreen() {
-  isfull.value = !isfull.value;
+  isfull.value = !isfull.value
   if (isfull.value) {
-    openFullScreen();
+    openFullScreen()
   } else {
-    exitFullScreen();
+    exitFullScreen()
   }
 }
 </script>
@@ -23,11 +23,7 @@ function fullScreen() {
       <div class="header-right">
         <div class="header-user-con">
           <theme-layout class="cursor-pointer" />
-          <mu-icon
-            class="cursor-pointer"
-            icon="icon-park-outline:full-screen"
-            @click="fullScreen"
-          />
+          <mu-icon class="cursor-pointer" icon="icon-park-outline:full-screen" @click="fullScreen" />
           <user-info />
         </div>
       </div>
